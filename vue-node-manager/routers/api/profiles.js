@@ -20,7 +20,7 @@ router.post('/add', passport.authenticate('jwt', { session: false }),(req,res)=>
     const profileFields = {};
 
     if(req.body.type) profileFields.type = req.body.type;
-    if(req.body.describe) profileFields.decsribe = req.body.describe;
+    if(req.body.describe) profileFields.describe = req.body.describe;
     if(req.body.income) profileFields.income = req.body.income;
     if(req.body.expend) profileFields.expend = req.body.expend;
     if(req.body.cash) profileFields.cash = req.body.cash;
@@ -67,11 +67,11 @@ router.get('/:id',passport.authenticate('jwt', { session: false }),(req,res)=>{
 //@route POST api/profiles/edit
 //@desc  编辑信息窗口
 //@access  Private
-router.post('/edit', passport.authenticate('jwt', { session: false }),(req,res)=>{
+router.post('/edit/:id', passport.authenticate('jwt', { session: false }),(req,res)=>{
     const profileFields = {};
 
     if(req.body.type) profileFields.type = req.body.type;
-    if(req.body.describe) profileFields.decsribe = req.body.describe;
+    if(req.body.describe) profileFields.describe = req.body.describe;
     if(req.body.income) profileFields.income = req.body.income;
     if(req.body.expend) profileFields.expend = req.body.expend;
     if(req.body.cash) profileFields.cash = req.body.cash;
@@ -84,11 +84,11 @@ router.post('/edit', passport.authenticate('jwt', { session: false }),(req,res)=
 
 });
 
-//@route POST api/profiles/
+//@route DELETE api/profiles/
 //@desc  删除信息接口
 //@access  Private
 router.delete(
-    'delete/:id',
+    '/delete/:id',
     passport.authenticate('jwt', { session: false }),
     (req,res) => {
         Profile.findOneAndRemove({_id:req.params.id}).then(profile=>{
