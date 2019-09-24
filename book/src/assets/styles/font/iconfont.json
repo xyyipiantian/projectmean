@@ -1,0 +1,58 @@
+{
+  "id": "1428846",
+  "name": "web阅读器",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "632976",
+      "name": "菜单",
+      "font_class": "caidan",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "757100",
+      "name": "shopping",
+      "font_class": "1401gouwuche",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    },
+    {
+      "icon_id": "999258",
+      "name": "太阳",
+      "font_class": "ai250",
+      "unicode": "e6ee",
+      "unicode_decimal": 59118
+    },
+    {
+      "icon_id": "1128597",
+      "name": "侧边栏展开",
+      "font_class": "cebianlanzhankai",
+      "unicode": "e7b0",
+      "unicode_decimal": 59312
+    },
+    {
+      "icon_id": "2667537",
+      "name": "联系人",
+      "font_class": "lianxiren",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "6263333",
+      "name": "上传",
+      "font_class": "shangchuan",
+      "unicode": "e667",
+      "unicode_decimal": 58983
+    },
+    {
+      "icon_id": "8718272",
+      "name": "进度",
+      "font_class": "jindu",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    }
+  ]
+}
