@@ -1,7 +1,7 @@
 <!--  -->
 <template>
   <div class="icons">
-    <swiper :options="swiperOption">
+    <swiper :options="swiperOption" v-if='showIcon'>
       <swiper-slide v-for="(page, index) in pages" :key="index">
         <div class="icon" v-for="item in page" :key="item.id">
           <div class="icon-img">
@@ -19,73 +19,22 @@
 export default {
   data() {
     return {
-      iconsList: [
-        {
-          id: "001",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png",
-          desc: "景点门票"
-        },
-        {
-          id: "002",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/ea/01d081dacb03cc02.png",
-          desc: "赏秋色"
-        },
-        {
-          id: "003",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/95/8246f27355943202.png",
-          desc: "游乐场"
-        },
-        {
-          id: "004",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png",
-          desc: "上海必游"
-        },
-        {
-          id: "005",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png",
-          desc: "景点门票"
-        },
-        {
-          id: "006",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/ea/01d081dacb03cc02.png",
-          desc: "赏秋色"
-        },
-        {
-          id: "007",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/95/8246f27355943202.png",
-          desc: "游乐场"
-        },
-        {
-          id: "008",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png",
-          desc: "上海必游"
-        },
-        {
-          id: "009",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png",
-          desc: "动物园"
-        }
-      ],
       swiperOption: {
         pagination: ".swiper-pagination",
         loop: true
       }
     };
   },
+  props: {
+    iconList: {
+      type: Array
+    }
+  },
   name: "HomeIcon",
   computed: {
     pages() {
       const pages = [];
-      this.iconsList.forEach((item, index) => {
+      this.iconList.forEach((item, index) => {
         const page = Math.floor(index / 8);
         if (!pages[page]) {
           pages[page] = [];
@@ -93,6 +42,9 @@ export default {
         pages[page].push(item);
       });
       return pages;
+    },
+    showIcon(){
+      return this.iconList.length
     }
   }
 };
@@ -113,6 +65,7 @@ export default {
   overflow: hidden;
   padding-bottom: 25%;
   position: relative;
+  margin-top: 0.2rem;
 
   .icon-img {
     position: absolute;
