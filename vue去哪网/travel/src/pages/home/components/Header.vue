@@ -8,10 +8,12 @@
       <span class="iconfont">&#xe62b;</span>
       内容
     </div>
-    <div class="header-right">
-      城市
-      <span class="iconfont arrow-icon">&#xec70;</span>
-    </div>
+    <router-link to='/city'>
+      <div class="header-right">
+        城市
+        <span class="iconfont arrow-icon">&#xec70;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -22,9 +24,10 @@ export default {
 </script>
 <style lang='stylus' scoped>
 // 1rem = html font-size = 50px
-@import '~styles/varibles.styl'
+@import '~styles/varibles.styl';
+
 .header {
-  height: 0.86rem;
+  height: $headerHeight;
   display: flex;
   background: $bgColor;
   color: #fff;
@@ -59,7 +62,7 @@ export default {
     text-align: center;
     line-height: 0.86rem;
     height: 100%;
-
+    color:#fb6700
     .arrow-icon:margin-left:-.04rem {
       font-size: 0.24rem;
     }
