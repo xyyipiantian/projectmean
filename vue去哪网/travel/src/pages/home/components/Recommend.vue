@@ -3,7 +3,12 @@
   <div>
     <div class="title">热销推荐</div>
     <ul>
-      <li class="item" v-for='item in recommendList' :key='item.id'>
+      <router-link 
+      tag='li'
+      class="item" 
+      v-for='item in recommendList' 
+      :key='item.id'
+      :to="'/detail/'+ item.id">
         <div class="item-img-wrapper">
           <img
             class="item-img"
@@ -16,7 +21,7 @@
           <p class="item-desc">{{item.desc}}</p>
           <button class="item-button">详细情况</button>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
