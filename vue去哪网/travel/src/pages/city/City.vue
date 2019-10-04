@@ -2,7 +2,7 @@
 <template>
   <div>
       <CityHeader></CityHeader>
-      <CitySearch></CitySearch>
+      <CitySearch :cities='cities'></CitySearch>
       <CityList :cities='cities' :hotCities = 'hotCities' :letter='letter'></CityList>
       <CityAlphabet 
       :cities='cities'
