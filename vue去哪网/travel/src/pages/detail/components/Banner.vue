@@ -1,7 +1,7 @@
 <!--  -->
 <template>
   <div>
-    <div class="banner">
+    <div class="banner" @click='handleBannerClick'>
       <img
         class="banner-img"
         src="https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20198/d75097876425de8365684f0693b37fd3.jpg"
@@ -15,7 +15,7 @@
         </div>
       </div>
     </div>
-    <CommonGallary></CommonGallary>
+    <CommonGallary :imgs='imgs' v-show='showGallay' @close='handleGallayClose'></CommonGallary>
   </div>
 </template>
 
@@ -23,8 +23,23 @@
 import CommonGallary from "common/gallary/Gallary";
 export default {
   name: "DetailBanner",
+  data(){
+    return{
+      showGallay:false,
+      imgs:['https://tse3-mm.cn.bing.net/th?id=OIP.rSHgPSQxnVyNM6mH3JC5kAAAAA&w=248&h=177&c=7&o=5&dpr=1.25&pid=1.7',
+      'https://tse3-mm.cn.bing.net/th?id=OIP.QIOWQnwZNRAsuPVQaoQiwAHaE8&w=258&h=172&c=7&o=5&dpr=1.25&pid=1.7'],
+    }
+  },
   components: {
     CommonGallary
+  },
+  methods:{
+    handleBannerClick(){
+      this.showGallay = true
+    },
+    handleGallayClose(){
+      this.showGallay = false
+    }
   }
 };
 </script>
