@@ -72,6 +72,7 @@ export default {
   }
 }
 .header-fixed 
+    z-index:2
     height:$headerHeight
     line-height:$headerHeight
     text-align:center
