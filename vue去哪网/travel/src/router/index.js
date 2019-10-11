@@ -23,4 +23,7 @@ export default new Router({
         }
     ],
     mode: "history",
+    scrollBehavior(to, from, savedPosition) {
+        return { x: 0, y: 0 }
+    }
 })

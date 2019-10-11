@@ -4,14 +4,14 @@
     <div class="banner" @click='handleBannerClick'>
       <img
         class="banner-img"
-        src="https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20198/d75097876425de8365684f0693b37fd3.jpg"
+        :src="bannerImg"
         alt
       />
       <div class="banner-info">
-        <div class="banner-title">大连上帝撒旦和</div>
+        <div class="banner-title">{{this.sightName}}</div>
         <div class="banner-number">
           <span class="iconfont banner-icon">&#xe62b;</span>
-          39
+          {{this.bannerImgs.length}}
         </div>
       </div>
     </div>
@@ -23,6 +23,11 @@
 import CommonGallary from "common/gallary/Gallary";
 export default {
   name: "DetailBanner",
+  props:{
+    sightName:String,
+    bannerImg:String,
+    bannerImgs:Array,
+  },
   data(){
     return{
       showGallay:false,
